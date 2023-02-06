@@ -9,15 +9,18 @@ class CardService {
   }
 
   getById(id) {
-    const query = Card.findOne({_id: id}).exec()
+    const query = Card.findOne({ _id: id }).exec()
 
     return query
   }
 
   add(data) {
     const addCard = new Card({
-      name: data.name,
-      img: data.img
+      img: data.img,
+      link: data.link,
+      title: data.title,
+      userName: data.userName,
+      userImg: data.userImg,
     })
 
     return addCard.save()

@@ -27,7 +27,7 @@ class CardController {
   add(req, res) {
     const body = req.body
 
-    if (body && body.name && body.img) {
+    if (body && body.img) {
       const addCard = this.cardService.add(body)
 
       if (addCard) {
