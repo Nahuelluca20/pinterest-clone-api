@@ -3,13 +3,4 @@ const mongoose = require("mongoose");
 
 mongoose.set('strictQuery', false);
 
-const url = process.env.URL
-
-mongoose.connect(
-  url,
-  {
-    useNewUrlParser: true
-  }
-)
-  .then(db => console.log("DB is connected"))
-  .catch(err => console.error(err))
+mongoose.connect(process.env.URL|| 'mongodb://localhost/your-app-name');
