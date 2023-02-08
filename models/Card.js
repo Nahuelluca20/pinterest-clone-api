@@ -21,6 +21,7 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  comments: [{type: String, required: false}]
 })
 
 module.exports = mongoose.model("Card", cardSchema)

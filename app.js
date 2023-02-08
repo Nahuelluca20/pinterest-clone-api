@@ -12,7 +12,7 @@ const app = express();
 
 // view engine setup
 
-app.use(cors("http://localhost:3000/"))
+app.use(cors("https://pinterest-clone-topaz.vercel.app/"))
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

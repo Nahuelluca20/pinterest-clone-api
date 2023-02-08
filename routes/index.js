@@ -13,6 +13,10 @@ router.get("/api/card/:id", (req, res) => {
   return CardInstance.getById(req, res)
 })
 
+router.patch("/api/card/:id", (req, res) => {
+  return CardInstance.addComment(req, res)
+})
+
 router.get("/api/card", (req, res) => {
   return CardInstance.get(req, res)
 })

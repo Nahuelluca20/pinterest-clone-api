@@ -24,6 +24,19 @@ class CardController {
     }
   }
 
+  async addComment(req, res) {
+    const id = req.params.id;
+    const body = req.body
+
+    if(id && body.comments) {
+      const card = await this.cardService.addComment(id, body.comments)
+
+      return res.json(card)
+    } else {
+      return res.sendStatus(400)
+    }
+  }
+
   add(req, res) {
     const body = req.body
 

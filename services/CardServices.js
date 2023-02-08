@@ -14,6 +14,15 @@ class CardService {
     return query
   }
 
+  addComment(id, comment) {
+    const filter = { _id: id };
+    const update = { $push: { comments: comment }}
+
+    const card = Card.findOneAndUpdate(filter, update)
+    
+    return card
+  }
+
   add(data) {
     const addCard = new Card({
       img: data.img,
@@ -21,6 +30,7 @@ class CardService {
       title: data.title,
       userName: data.userName,
       userImg: data.userImg,
+      comments: data.comments
     })
 
     return addCard.save()
